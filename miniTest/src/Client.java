@@ -1,3 +1,6 @@
+import Model.FictionBook;
+import Model.ProgrammingBook;
+
 public class Client {
     public static void main(String[] args) {
         ProgrammingBook book1 = new ProgrammingBook(101, "KnowAboutJava", 10.5, "KA", "Java", "Spring");
@@ -14,21 +17,23 @@ public class Client {
 
 //        Tính tổng số tiền
         double[] priceBook = {book1.getPrice(), book2.getPrice(), book3.getPrice(), book4.getPrice(), book5.getPrice(), ficBook1.getPrice(), ficBook2.getPrice(), ficBook3.getPrice(), ficBook4.getPrice(), ficBook5.getPrice()};
-        System.out.println("Tổng số tiền là: " + priceOfBook(priceBook)+" $");
-//        Đếm ngôn ngữ sách ProgrammingBook
+        System.out.println("Tổng số tiền là: " + priceOfBook(priceBook) + " $");
+//        Đếm ngôn ngữ sách Model.ProgrammingBook
         String[] languageBook = {book1.getLanguage(), book2.getLanguage(), book3.getLanguage(), book4.getLanguage(), book5.getLanguage()};
         System.out.println("Number of books in Java language are: " + checkLanguage(languageBook));
 //        Đếm thể loại fictionBook
         String[] categoryFB = {ficBook1.getCategory(), ficBook2.getCategory(), ficBook3.getCategory(), ficBook4.getCategory(), ficBook5.getCategory()};
         System.out.println("Number of books types of 'Vien tuong 1' are: " + checkCategory(categoryFB));
-//        Đếm số sách FictionBook có giá < 100
+//        Đếm số sách Model.FictionBook có giá < 100
         double[] fictionBookPrice = {ficBook1.getPrice(), ficBook2.getPrice(), ficBook3.getPrice(), ficBook4.getPrice(), ficBook5.getPrice()};
-        System.out.println("Number of Books have price under 100 are: "+ priceUnder100(fictionBookPrice));
+        System.out.println("Number of Books have price under 100 are: " + priceUnder100(fictionBookPrice));
+//        Tạo mảng đối tượng
+
     }
 
     public static int priceUnder100(double[] fbPrice) {
         int count = 0;
-        for (int i = 0; i <fbPrice.length; i++) {
+        for (int i = 0; i < fbPrice.length; i++) {
             if (fbPrice[i] < 100) {
                 count++;
             }
